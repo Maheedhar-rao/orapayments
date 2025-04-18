@@ -8,6 +8,12 @@ function Navbar() {
       <div>
         <img src="/ora.jpg" alt="Ora Payments" style={{ height: '120px',  borderRadius: '12px' }} />
       </div>
+        
+      <div style={styles.hamburger} onClick={toggleMenu}>
+        <div style={styles.bar}></div>
+        <div style={styles.bar}></div>
+        <div style={styles.bar}></div>
+      </div>
 
       {/* Nav links on the right */}
       <ul style={{ listStyle: 'none', display: 'flex', gap: '60px', margin: 0, padding: 0 }}>
