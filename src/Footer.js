@@ -7,7 +7,6 @@ function Footer() {
         {/* Logo + Partner */}
         <div style={{ flex: '1 1 200px' }}>
           <img src="/ora.jpg" alt="Ora Payments" style={{ height: '60px', borderRadius: '8px', marginBottom: '10px' }} />
-          <p style={{ marginTop: '10px', fontSize: '0.9rem' }}>📍 In Partnership with PayProTec</p>
         </div>
 
         {/* Email Subscription */}
