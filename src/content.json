@@ -29,7 +29,8 @@
       "In-Person Payments",
       "Online Payments",
       "Mobile Payments",
-      "Contactless Payments"
+      "Contactless Payments",
+      "POS"
     ]
   },
   "contact": {
