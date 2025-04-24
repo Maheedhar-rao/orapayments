@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
+import content from './content.json';
 
 function Home() {
   const vantaRef = useRef(null);
@@ -8,7 +9,6 @@ function Home() {
   const [vantaEffect, setVantaEffect] = useState(null);
   const [ctaVisible, setCtaVisible] = useState(false);
 
-  // Vanta Background
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
@@ -31,7 +31,6 @@ function Home() {
     };
   }, [vantaEffect]);
 
-  // Scroll-trigger animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -80,10 +79,10 @@ function Home() {
       >
         <div style={{ maxWidth: '500px', color: '#00bfff', textAlign: 'center' }}>
           <h1 style={{ fontSize: '3rem', marginBottom: '10px', animation: 'fadeInDown 1s ease-out' }}>
-            Welcome to Ora Payments
+            {content.home.headline}
           </h1>
           <p style={{ fontSize: '1.2rem', marginBottom: '30px', animation: 'fadeInUp 1.2s ease-out' }}>
-            Moving Payments Forward
+            {content.home.subtext}
           </p>
           <a
             href="#contact"
@@ -100,7 +99,7 @@ function Home() {
             onMouseOver={e => (e.currentTarget.style.backgroundColor = '#0099cc')}
             onMouseOut={e => (e.currentTarget.style.backgroundColor = '#00bfff')}
           >
-            Get Started
+            {content.home.cta}
           </a>
         </div>
 
@@ -135,7 +134,6 @@ function Home() {
           transition: 'all 1s ease'
         }}
       >
-        {/* Image Left */}
         <img
           src="/office.png"
           alt="Office"
@@ -147,23 +145,21 @@ function Home() {
           }}
         />
 
-        {/* Content Right */}
         <div style={{ maxWidth: '500px', textAlign: 'left' }}>
           <h2 style={{ fontSize: '2.2rem', marginBottom: '10px' }}>
-            We drive success to your everyday business
+            {content.ctaSection.title}
           </h2>
           <p style={{ fontSize: '1rem', marginBottom: '20px', lineHeight: '1.5', color: '#ccc' }}>
-            We understand that managing your business is your top priority, which is why we offer exceptional service, reliable solutions, and complete transparency to ensure that your processing needs are met without any unexpected challenges.
+            {content.ctaSection.description}
           </p>
           <ul style={{ paddingLeft: '20px', lineHeight: '1.8', fontWeight: 'bold' }}>
-            <li>Receive your funds as quickly as same day</li>
-            <li>Access to the best POS Solutions</li>
-            <li>No long-term processing agreement</li>
+            {content.ctaSection.bullets.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
       </section>
 
-      {/* CSS Animations */}
       <style>{`
         @keyframes fadeInDown {
           from { opacity: 0; transform: translateY(-20px); }
