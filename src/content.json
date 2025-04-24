@@ -1,0 +1,40 @@
+{
+  "home": {
+    "headline": "Welcome to Ora Payments",
+    "subtext": "Moving Payments Forward",
+    "cta": "Get Started"
+  },
+  "ctaSection": {
+    "title": "We drive success to your everyday business",
+    "description": "We understand that managing your business is your top priority, which is why we offer exceptional service...",
+    "bullets": [
+      "Receive your funds as quickly as same day",
+      "Access to the best POS Solutions",
+      "No long-term processing agreement"
+    ]
+  },
+  "about": {
+    "title": "Who We Are",
+    "tagline": "Expertise – Integrity – Excellence",
+    "paragraphs": [
+      "Welcome to Ora Payments, a premier payment technology company headquartered in New York...",
+      "From smart POS systems to seamless online checkout...",
+      "Thank you for considering Ora Payments as your partner..."
+    ],
+    "cta": "Get Started with Ora Payments"
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      "In-Person Payments",
+      "Online Payments",
+      "Mobile Payments",
+      "Contactless Payments"
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "officeText": "For more information, Please mail to info@orapayments.com",
+    "hoursText": "Monday to Friday : 9 am – 6 pm"
+  }
+}
