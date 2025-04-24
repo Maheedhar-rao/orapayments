@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
+import content from './content.json';
 
 function Services() {
   const vantaRef = useRef(null);
@@ -59,7 +60,7 @@ function Services() {
             animation: 'fadeInDown 1s ease-out'
           }}
         >
-          Our Services
+          {content.services.title}
         </h1>
 
         <div
@@ -70,12 +71,7 @@ function Services() {
             gap: '30px'
           }}
         >
-          {[
-            'In-Person Payments',
-            'Online Payments',
-            'Mobile Payments',
-            'Contactless Payments'
-          ].map((service, index) => (
+          {content.services.items.map((service, index) => (
             <div
               key={index}
               style={{
