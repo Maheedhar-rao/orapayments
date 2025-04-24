@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
+import content from './content.json';
 
 function Contact() {
   const vantaRef = useRef(null);
@@ -59,7 +60,7 @@ function Contact() {
             animation: 'fadeInDown 1s ease-out'
           }}
         >
-          Contact Us
+          {content.contact.title}
         </h1>
 
         <div
@@ -72,20 +73,18 @@ function Contact() {
             maxWidth: '1100px'
           }}
         >
-          {/* === Contact Cards === */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={cardStyle('/office.jpg')}>
-              <h2 style={cardTitle}>office</h2>
-              <p style={cardText}>For more information, Please mail to info@orapayments.com </p>
+              <h2 style={cardTitle}>Office</h2>
+              <p style={cardText}>{content.contact.officeText}</p>
             </div>
 
             <div style={cardStyle('/hours.jpg')}>
               <h2 style={cardTitle}>Working Hours</h2>
-              <p style={cardText}>Monday to Friday : 9 am – 6 pm</p>
+              <p style={cardText}>{content.contact.hoursText}</p>
             </div>
           </div>
 
-          {/* === Contact Form === */}
           <form
             style={{
               backgroundColor: '#111',
@@ -112,7 +111,6 @@ function Contact() {
             <label style={labelStyle}>Mobile</label>
             <input style={inputStyle} type="text" required />
 
-
             <label style={labelStyle}>Message For Us</label>
             <textarea style={{ ...inputStyle, height: '100px' }} required />
 
@@ -135,7 +133,6 @@ function Contact() {
         </div>
       </div>
 
-      {/* CSS Animations & Responsive */}
       <style>{`
         @keyframes fadeInDown {
           from { opacity: 0; transform: translateY(-20px); }
