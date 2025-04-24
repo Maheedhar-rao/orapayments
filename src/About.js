@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
+import content from './content.json';
 
 function About() {
   const vantaRef = useRef(null);
@@ -56,23 +57,16 @@ function About() {
         {/* Text Section */}
         <div style={{ maxWidth: '600px', color: '#00bfff', textAlign: 'left' }}>
           <h1 style={{ fontSize: '2.8rem', marginBottom: '10px', animation: 'fadeInDown 1s ease-out' }}>
-            Who We Are
+            {content.about.title}
           </h1>
           <h3 style={{ fontWeight: 'normal', marginBottom: '20px', color: '#ccc' }}>
-            Expertise – Integrity – Excellence
+            {content.about.tagline}
           </h3>
-          <p style={{ lineHeight: '1.6', fontSize: '1.05rem', animation: 'fadeInUp 1.2s ease-out' }}>
-            Welcome to Ora Payments, a premier payment technology company headquartered in New York.
-            Our mission is simple: to provide modern, secure, and cost-effective payment solutions that empower businesses.
-            Backed by over 30 years of experience in credit card processing, our leadership understands the real challenges merchants face.
-          </p>
-          <p style={{ lineHeight: '1.6', fontSize: '1.05rem' }}>
-            From smart POS systems to seamless online checkout, our tools are engineered for businesses of all sizes and industries.
-            We're committed to helping you reduce costs, enhance efficiency, and serve your customers better — all while maintaining complete peace of mind.
-          </p>
-          <p style={{ lineHeight: '1.6', fontSize: '1.05rem' }}>
-            Thank you for considering Ora Payments as your partner. We don’t take your trust lightly — and we’re ready to exceed expectations.
-          </p>
+          {content.about.paragraphs.map((para, idx) => (
+            <p key={idx} style={{ lineHeight: '1.6', fontSize: '1.05rem', animation: 'fadeInUp 1.2s ease-out' }}>
+              {para}
+            </p>
+          ))}
 
           <div style={{ marginTop: '30px', animation: 'fadeInUp 1.5s ease-out' }}>
             <a
@@ -89,14 +83,14 @@ function About() {
               onMouseOver={e => (e.currentTarget.style.backgroundColor = '#0099cc')}
               onMouseOut={e => (e.currentTarget.style.backgroundColor = '#00bfff')}
             >
-              Get Started with Ora Payments
+              {content.about.cta}
             </a>
           </div>
         </div>
 
         {/* Image Section */}
         <img
-          src="/about.png" // You can replace this with your new image file
+          src="/about.png"
           alt="About Us"
           style={{
             width: '400px',
